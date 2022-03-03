@@ -1,6 +1,7 @@
 package com.duvis.practice.springboot.config.auth;
 
 import com.duvis.practice.springboot.config.auth.dto.OAuthAttributes;
+import com.duvis.practice.springboot.config.auth.dto.SessionUser;
 import com.duvis.practice.springboot.domain.user.User;
 import com.duvis.practice.springboot.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -45,7 +46,6 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
                Collections.singleton(new SimpleGrantedAuthority(user.getRoleKey())),
                attributes.getAttributes(),
                attributes.getNameAttributeKey());
-       );
     }
 
     private User saveOrUpdate(OAuthAttributes attributes) {
