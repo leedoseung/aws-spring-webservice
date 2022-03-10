@@ -22,9 +22,9 @@ notifications:
 
 
 before_deploy:
-  - zip -r aws-spring-webservice
+  - zip -r freelec-springboot2-webservice aws-spring-webservice
   - mkdir -p deploy
-  - mv aws-spring-webservice.zip deploy/aws-spring-webservice.zip
+  - mv freelec-springboot2-webservice.zip deploy/freelec-springboot2-webservice.zip
 
 deploy:
   - provider: s3
